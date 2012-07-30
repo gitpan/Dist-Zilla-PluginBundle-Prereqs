@@ -24,6 +24,7 @@
    "prereqs" : {
       "runtime" : {
          "requires" : {
+            "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
             "Dist::Zilla::Role::MetaCPANInterfacer" : "0",
             "Dist::Zilla::Role::PluginBundle::Merged" : "0",
             "Dist::Zilla::Role::PrereqSource" : "0",
@@ -46,15 +47,15 @@
    "provides" : {
       "Dist::Zilla::Plugin::MinimumPrereqs" : {
          "file" : "lib/Dist/Zilla/Plugin/MinimumPrereqs.pm",
-         "version" : "0.90"
+         "version" : "0.91"
       },
       "Dist::Zilla::Plugin::PrereqsClean" : {
          "file" : "lib/Dist/Zilla/Plugin/PrereqsClean.pm",
-         "version" : "0.90"
+         "version" : "0.91"
       },
       "Dist::Zilla::PluginBundle::Prereqs" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Prereqs.pm",
-         "version" : "0.90"
+         "version" : "0.91"
       }
    },
    "release_status" : "stable",
@@ -70,7 +71,7 @@
       },
       "x_irc" : "irc://irc.perl.org/#distzilla"
    },
-   "version" : "0.90",
+   "version" : "0.91",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -196,7 +197,18 @@
          {
             "class" : "Dist::Zilla::Plugin::PrereqsClean",
             "name" : "PrereqsClean",
-            "version" : "1.00"
+            "version" : "0.91"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "requires"
+               }
+            },
+            "name" : "Prereqs",
+            "version" : "4.300020"
          },
          {
             "class" : "Dist::Zilla::Plugin::CheckPrereqsIndexed",
